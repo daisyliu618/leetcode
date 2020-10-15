@@ -2,7 +2,7 @@
 
 > WIP: the translation of `Recursive and Dynamic Programming` is on the way.
 
-Dynamic Programming (DP) can be interpreted as the recursion of table look-up. Then, what is recursion?
+Dynamic Programming \(DP\) can be interpreted as the recursion of table look-up. Then, what is recursion?
 
 ## Recursion
 
@@ -21,23 +21,22 @@ Now, let's going to talk about recursion. In layman's terms, A recursive solutio
 
 There are several questions which can be solved by using recursion easily:
 
-- [sum by recursion](https://www.geeksforgeeks.org/sum-of-natural-numbers-using-recursion/)
-- [Traverse Binary Tree](https://www.geeksforgeeks.org/tree-traversals-inorder-preorder-and-postorder/)
-- [climbing stairs](https://leetcode.com/problems/climbing-stairs/)
-- [tower of Hanoi](https://www.geeksforgeeks.org/c-program-for-tower-of-hanoi/)
+* [sum by recursion](https://www.geeksforgeeks.org/sum-of-natural-numbers-using-recursion/)
+* [Traverse Binary Tree](https://www.geeksforgeeks.org/tree-traversals-inorder-preorder-and-postorder/)
+* [climbing stairs](https://leetcode.com/problems/climbing-stairs/)
+* [tower of Hanoi](https://www.geeksforgeeks.org/c-program-for-tower-of-hanoi/)
 
-## Dynamic Programming (DP)
+## Dynamic Programming \(DP\)
 
 > If we say, recursion is a detivation from the solution to the problem which trying to shrinkthe problem and solve it. Then DP solves probems by starting from a small condition and extending it to the optimal substructure.
 
-The thinking of recursion is intuitive. And it is easy to be implemented. But sometimes, with drawing a recursion tree to help analyse, we can find that recursion may bring extra computation during shriking the scale of the problem.
-We are going to use recursion to solve [279.perfect-squares](../problems/279.perfect-squares.md) with using a buffer to store the intermediate result for reducing some computation. In fact, this is also the key idea in DP.
+The thinking of recursion is intuitive. And it is easy to be implemented. But sometimes, with drawing a recursion tree to help analyse, we can find that recursion may bring extra computation during shriking the scale of the problem. We are going to use recursion to solve [279.perfect-squares](../problems/279.perfect-squares.md) with using a buffer to store the intermediate result for reducing some computation. In fact, this is also the key idea in DP.
 
 Here is an example of calculate the sum of all items in the given array.
 
 code:
 
-```js
+```javascript
 function sum(nums) {
   if (nums.length === 0) return 0;
   if (nums.length === 1) return nums[0];
@@ -48,21 +47,19 @@ function sum(nums) {
 
 Let's review this problem intuitively with a recursion tree.
 
-![dynamic-programming-1](../assets/thinkings/dynamic-programming-1.png)
+![dynamic-programming-1](../.gitbook/assets/dynamic-programming-1.png)
 
-This method works, but not quit good. Because there are certain costs in executing functions. Let's take JS as example.
-For each time a function executed, it requires stack push operations, pre-processing and executing processes. So, recurse a function is easy to cause stack overflow.
+This method works, but not quit good. Because there are certain costs in executing functions. Let's take JS as example. For each time a function executed, it requires stack push operations, pre-processing and executing processes. So, recurse a function is easy to cause stack overflow.
 
 > In browser, the JS exgine has limit to the length of code execution stack. The stack overflow exeption happens when the length of execution stack exceeds the limit.
 
 Another example for recursion:
 
-You are climbing a stair case. It takes n steps to reach to the top.
-Each time you can either climb 1 or 2 steps. In how many distinct ways can you climb to the top?
+You are climbing a stair case. It takes n steps to reach to the top. Each time you can either climb 1 or 2 steps. In how many distinct ways can you climb to the top?
 
 code:
 
-```js
+```javascript
 function climbStairs(n) {
   if (n === 1) return 1;
   if (n === 2) return 2;
@@ -72,10 +69,9 @@ function climbStairs(n) {
 
 This question is just like the `fibnacci` series. Let's have a look at the recursion tree of `fibnacci` question again.
 
-![dynamic-programming-2](../assets/thinkings/dynamic-programming-2.png)
+![dynamic-programming-2](../.gitbook/assets/dynamic-programming-2.png)
 
-Some results are calculated repeatedly. Just like the red nodes showing. If a structure like `hashtable` is used to store the intermedia results, the reduplicative calculations can be avoided.
-Similarly, DP also uses "table look-up" to solve the problem of reduplicative calculation.
+Some results are calculated repeatedly. Just like the red nodes showing. If a structure like `hashtable` is used to store the intermedia results, the reduplicative calculations can be avoided. Similarly, DP also uses "table look-up" to solve the problem of reduplicative calculation.
 
 Now let's talk more about the DP.
 
@@ -83,7 +79,7 @@ How to start from a small condition to achieve the optimal substructure.
 
 This is the solution to the previous question with using DP:
 
-```js
+```javascript
 function climbStairs(n) {
   if (n === 1) return 1;
   if (n === 2) return 2;
@@ -104,7 +100,7 @@ function climbStairs(n) {
 
 Here is the process of "table look-up" in DP:
 
-![dynamic-programming-3](../assets/thinkings/dynamic-programming-3.png)
+![dynamic-programming-3](../.gitbook/assets/dynamic-programming-3.png)
 
 > dotted box is the "table look-up"
 
@@ -121,14 +117,14 @@ Sometimes, we don't even need a one-dimentional array, just like the climbing st
 
 In the previous question:
 
-```
+```text
 f(1) and f(2) are the critical conditions
 f(n) = f(n-1) + f(n-2) is the state transfer function
 ```
 
 ### Why it is necessary to draw a table for solving DP questions
 
-Drawing a table to solve DP questions is a effective and efficient way. 
+Drawing a table to solve DP questions is a effective and efficient way.
 
 Essentially, DP breaks a problem into similar subproblems and solve the problem by solving its all subproblems.
 
@@ -142,13 +138,13 @@ For example, using DP to solve Backpack problem, it makes decision that which ce
 
 ### Related Questions
 
-- [0091.decode-ways](../problems/91.decode-ways.md)
-- [0139.word-break](../problems/139.word-break.md)
-- [0198.house-robber](../problems/0198.house-robber.md)
-- [0309.best-time-to-buy-and-sell-stock-with-cooldown](../problems/309.best-time-to-buy-and-sell-stock-with-cooldown.md)
-- [0322.coin-change](../problems/322.coin-change.md)
-- [0416.partition-equal-subset-sum](../problems/416.partition-equal-subset-sum.md)
-- [0518.coin-change-2](../problems/518.coin-change-2.md)
+* [0091.decode-ways](../problems/91.decode-ways.md)
+* [0139.word-break](../problems/139.word-break.md)
+* [0198.house-robber](https://github.com/daisyliu618/leetcode/tree/26ac1eff1c95729babf665545167d4b9b19d1df4/problems/0198.house-robber.md)
+* [0309.best-time-to-buy-and-sell-stock-with-cooldown](../problems/309.best-time-to-buy-and-sell-stock-with-cooldown.md)
+* [0322.coin-change](../problems/322.coin-change.md)
+* [0416.partition-equal-subset-sum](../problems/416.partition-equal-subset-sum.md)
+* [0518.coin-change-2](../problems/518.coin-change-2.md)
 
 > there are much more related questions not presented.
 
@@ -157,3 +153,4 @@ For example, using DP to solve Backpack problem, it makes decision that which ce
 There are two important algorithms in this article: recursion and dynamic programming.
 
 If recursion is a bottom-top process, then DP is a top-bottom process.
+

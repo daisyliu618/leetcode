@@ -20,42 +20,43 @@
 
 Sorting algorithms are meta algorithm. Although they are not tested quit often, the core ideas are very useful.
 
-#### O(n^2)
+#### O\(n^2\)
 
-- Insertion Sort
-- Selection Sort
-- Shell's Sort (aka Diminishing Increment Sort)
-- Bubble Sort
+* Insertion Sort
+* Selection Sort
+* Shell's Sort \(aka Diminishing Increment Sort\)
+* Bubble Sort
 
-#### O(nlogn)
+#### O\(nlogn\)
 
-- Quick Sort
-- Merge Sort
-- Heap Sort
+* Quick Sort
+* Merge Sort
+* Heap Sort
 
-#### O(n)
+#### O\(n\)
 
-- Bucket Sort
-- Counting Sort
-- Radix Sort
+* Bucket Sort
+* Counting Sort
+* Radix Sort
 
 ### Searching Algorithm
 
-- BFPRT Algorithm
-- Search Trees
-- Search by Hashing
+* BFPRT Algorithm
+* Search Trees
+* Search by Hashing
 
 ## Algorithms for String
 
-- 朴素
-- KMP
-- RK
-- BM
-- trie
+* 朴素
+* KMP
+* RK
+* BM
+* trie
 
 ## Other
 
-- Number Theory
-- Probability Theory
-- Union-find Algorithm
-- Matrix Algorithms
+* Number Theory
+* Probability Theory
+* Union-find Algorithm
+* Matrix Algorithms
+
