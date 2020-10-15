@@ -1,4 +1,4 @@
-# LeetCode Solutions By Lucifer
+# 力扣题解 By Lucifer
 
 简体中文 \| [English](readme.en.md)
 
@@ -73,8 +73,4 @@
 ## 鸣谢
 
 感谢为这个项目作出贡献的所有[小伙伴](https://github.com/azl397985856/leetcode/graphs/contributors)
-
-## License
-
-[Apache-2.0](https://github.com/daisyliu618/leetcode/tree/26ac1eff1c95729babf665545167d4b9b19d1df4/LICENSE.txt)
 

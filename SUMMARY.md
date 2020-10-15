@@ -1,6 +1,6 @@
 # Table of contents
 
-* [LeetCode Solutions By Lucifer](README.md)
+* [力扣题解 By Lucifer](README.md)
 * [Table Content](table-content/README.md)
   * [精彩预告](table-content/jing-cai-yu-gao/README.md)
     * [每日一题](table-content/jing-cai-yu-gao/mei-ri-yi-ti.md)
